@@ -10,9 +10,11 @@ class ListaUsuarios {
 
     $reactive(this).attach($scope);
 
+    Meteor.subscribe("listaUsuarios");
+
     this.helpers({
       listaUsuarios() {
-        return Meteor.users.find({});
+        return Meteor.users.find({});        
       }
     });
   }

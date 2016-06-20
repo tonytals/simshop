@@ -1,6 +1,6 @@
 </p>Lista de Usuarios</p>
 <ul>
-  <li ng-repeat="usuario in listaUsuarios">
-      {{ usuario._id[0] }}
+  <li ng-repeat="usuario in listaUsuarios.listaUsuarios">
+      <div>{{ usuario.emails[0].address }}</div>
   </li>
 </ul>
