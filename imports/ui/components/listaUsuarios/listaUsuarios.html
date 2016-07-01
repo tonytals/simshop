@@ -1,12 +1,61 @@
-</p>Lista de Usuarios</p>
-<ul>
-  <li ng-repeat="usuario in listaUsuarios.listaUsuarios">
-  		<div>Nome Privado: {{ usuario.name }}</div>
-  		<div>Nome Publico: {{ usuario.nick }}</div>
-  		<div>Carteira: {{ usuario.carteira }}</div>
-  		<div>Histórico: {{ usuario.historico }}</div>
-    	<div ng-repeat="email in usuario.emails[0]">E-mail: {{ email }}</div>
-    	<div></div>
-    	<br/><br/>
-  </li>
-</ul>
+<h3>Lista de Usuarios</h3>
+<div class="ui grid">
+<div class="list" ng-repeat="usuario in listaUsuarios.listaUsuarios">
+
+	<div class="four wide column">
+	<div class="row">
+    <div class="column">
+  		<div class="item">
+  			<i class="spy icon"></i>
+  			Nome Privado: {{ usuario.nome }}
+  		</div>
+  		
+  		<div class="item">
+  			<i class="users icon"></i>
+  			Nome Publico: {{ usuario.nick }}
+  		</div>
+  		
+  		<div class="item">
+  			<i class="money icon"></i>
+  			Carteira: {{ usuario.carteira | currency : "R$ " }}
+  		</div>
+  		
+
+    		<div ng-repeat="email in usuario.emails">
+    			<div class="item">
+    				<i class="mail icon"></i>
+    				E-mail: {{ email.address }}
+    			</div>
+    			<div class="item">
+    				<i class="check circle icon"></i>
+    				Verificado: {{ email.verified }}
+    			</div>
+    		</div>
+
+  		
+  		<div class="item">
+  			<i class="pie chart icon"></i>
+  			Histórico de Compras
+  				<div ng-repeat="historico in usuario.historico">
+    				<div class="item">
+    					<i class="mail icon"></i>
+    					Produto: {{ historico.address }}
+    				</div>
+    				<div class="item">
+    					<i class="check circle icon"></i>
+    					Valor Pago: {{ historico.valorPago | currency : "R$ " }}
+    				</div>
+    				<div class="item">
+    					<i class="check circle icon"></i>
+    					Desconto: {{ historico.desconto }}
+    				</div>
+    			</div>
+  		</div>
+    </div>
+    </div>
+    </div>    	
+
+
+
+</div>
+</div>
