@@ -1,6 +1,12 @@
 </p>Lista de Usuarios</p>
 <ul>
   <li ng-repeat="usuario in listaUsuarios.listaUsuarios">
-      <div>{{ usuario.emails[0].address }}</div>
+  		<div>Nome Privado: {{ usuario.name }}</div>
+  		<div>Nome Publico: {{ usuario.nick }}</div>
+  		<div>Carteira: {{ usuario.carteira }}</div>
+  		<div>Histórico: {{ usuario.historico }}</div>
+    	<div ng-repeat="email in usuario.emails[0]">E-mail: {{ email }}</div>
+    	<div></div>
+    	<br/><br/>
   </li>
 </ul>
